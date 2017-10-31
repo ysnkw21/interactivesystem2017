@@ -5,6 +5,7 @@
 //
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace UnityChan
 {
@@ -53,6 +54,7 @@ namespace UnityChan
 		// 初期化
 		void Start ()
 		{
+
 			// Animatorコンポーネントを取得する
 			anim = GetComponent<Animator> ();
 			// CapsuleColliderコンポーネントを取得する（カプセル型コリジョン）
@@ -69,6 +71,13 @@ namespace UnityChan
 		// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
 		void FixedUpdate ()
 		{
+			if (Game.getGoalFlag ()) {
+				Debug.Log ("goal");
+				Game.setGoalFlag();
+				StartCoroutine (sleep(5.0f));
+				return;
+			}
+
 			float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
 			float v = Input.GetAxis ("Vertical");				// 入力デバイスの垂直軸をvで定義
 			anim.SetFloat ("Speed", v);							// Animator側で設定している"Speed"パラメタにvを渡す
@@ -196,6 +205,11 @@ namespace UnityChan
 			// コンポーネントのHeight、Centerの初期値を戻す
 			col.height = orgColHight;
 			col.center = orgVectColCenter;
+		}
+
+		private IEnumerator sleep(float waitTime){
+			yield return new WaitForSeconds (waitTime);
+			SceneManager.LoadScene ("main_scene");
 		}
 	}
 }
