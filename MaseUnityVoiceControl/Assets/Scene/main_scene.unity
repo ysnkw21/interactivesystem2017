@@ -8462,7 +8462,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400022, guid: 69c3ed15e9d13481e8f7dc4db5532fb6, type: 2}
       propertyPath: jumpPower
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69c3ed15e9d13481e8f7dc4db5532fb6, type: 2}
