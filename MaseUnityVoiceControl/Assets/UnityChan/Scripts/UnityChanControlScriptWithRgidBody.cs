@@ -209,7 +209,7 @@ namespace UnityChan
 
 		private IEnumerator sleep(float waitTime){
 			yield return new WaitForSeconds (waitTime);
-			SceneManager.LoadScene ("main_scene");
+			SceneManager.LoadScene ("start_scene");
 		}
 	}
 }
