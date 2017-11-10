@@ -74,7 +74,7 @@ namespace UnityChan
 			if (Game.getGoalFlag ()) {
 				Debug.Log ("goal");
 				Game.setGoalFlag();
-				StartCoroutine (sleep(5.0f));
+				StartCoroutine (sleep(2.0f));
 				return;
 			}
 
@@ -209,7 +209,7 @@ namespace UnityChan
 
 		private IEnumerator sleep(float waitTime){
 			yield return new WaitForSeconds (waitTime);
-			SceneManager.LoadScene ("start_scene");
+			SceneManager.LoadScene ("result_scnece");
 		}
 	}
 }
