@@ -849,7 +849,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1994874407
+  randomSeed: -1304254051
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3998,7 +3998,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u306A\u3093\u304B\u306E\u30B2\u30FC\u30E0"
+  m_Text: "(\u4EEE)\u8FF7\u8DEF\u30B2\u30FC\u30E0"
 --- !u!222 &1764699723
 CanvasRenderer:
   m_ObjectHideFlags: 0

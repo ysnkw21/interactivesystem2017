@@ -21,8 +21,6 @@ GameObject:
   - component: {fileID: 4595670203746136}
   - component: {fileID: 33522697769721222}
   - component: {fileID: 23241788412859514}
-  - component: {fileID: 135493806587260480}
-  - component: {fileID: 114193704290996922}
   m_Layer: 0
   m_Name: egg 1
   m_TagString: Egg
@@ -82,26 +80,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1753512776865568}
   m_Mesh: {fileID: 4300000, guid: 214315961896cb246a09ddccf67044d7, type: 3}
---- !u!114 &114193704290996922
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1753512776865568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c61ea7a493fcf4577a1df4ddc9109a6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!135 &135493806587260480
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1753512776865568}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.17684004
-  m_Center: {x: -0.000000037252903, y: -0.000000022351742, z: 0}
