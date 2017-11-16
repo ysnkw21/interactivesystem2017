@@ -6,11 +6,16 @@ using UnityEngine.UI;
 public class orange : MonoBehaviour {
 
 	Slider _slider;
+	public Sprite img;
+	private GameObject obj;
+	private Image image;
 
 	// Use this for initialization
 	void Start () {
 		// スライダーを取得する
-		_slider = GameObject.Find("HPBar").GetComponent<Slider>();
+		_slider = GameObject.Find("VitC1Bar").GetComponent<Slider>();
+		obj = GameObject.Find("VirusImgC1").gameObject as GameObject;
+		image = obj.GetComponent<Image> ();
 	}
 
 	// Update is called once per frame
@@ -22,7 +27,10 @@ public class orange : MonoBehaviour {
 		//衝突判定
 		if (collision.gameObject.tag == "Player") {
 			Destroy (this.gameObject);
-			_slider.value += 10;
+			_slider.value -= 10;
+		}
+		if (_slider.value == 0) {
+			image.sprite = img;
 		}
 	}
 }
