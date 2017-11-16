@@ -18,16 +18,11 @@ public class orange : MonoBehaviour {
 		image = obj.GetComponent<Image> ();
 	}
 
-	// Update is called once per frame
-	void Update () {
-
-	}
-
 	void OnCollisionEnter(Collision collision) {
 		//衝突判定
 		if (collision.gameObject.tag == "Player") {
 			Destroy (this.gameObject);
-			_slider.value -= 10;
+			_slider.value -= 100;
 		}
 		if (_slider.value == 0) {
 			image.sprite = img;

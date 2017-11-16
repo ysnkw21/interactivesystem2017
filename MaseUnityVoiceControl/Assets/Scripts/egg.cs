@@ -27,7 +27,7 @@ public class egg : MonoBehaviour {
 		//衝突判定
 		if (collision.gameObject.tag == "Player") {
 			Destroy (this.gameObject);
-			_slider.value -= 30;
+			_slider.value -= 100;
 		}
 		if (_slider.value == 0) {
 			image.sprite = img;

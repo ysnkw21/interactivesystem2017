@@ -5,6 +5,7 @@ using UnityEngine;
 public class Game : MonoBehaviour {
 
 	private static bool goalFlag = false;
+	private static bool loseFlag = false;
 	private static int car_count = 3;
 	private static int ora_count = 3;
 	private static int egg_count = 3;
@@ -14,9 +15,12 @@ public class Game : MonoBehaviour {
 			goalFlag = true;
 		else
 			goalFlag = false;
-		
-		Debug.Log ("setGoalFlag" + goalFlag);
 
+		return;
+	}
+
+	public static void setLoseFlag(bool flag){
+		loseFlag = flag;
 		return;
 	}
 
@@ -37,6 +41,10 @@ public class Game : MonoBehaviour {
 
 	public static bool getGoalFlag(){
 		return goalFlag;
+	}
+
+	public static bool getLoseFlag(){
+		return loseFlag;
 	}
 
 	public static int getCarCount(){
