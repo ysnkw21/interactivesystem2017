@@ -26,6 +26,8 @@ public class orange : MonoBehaviour {
 		}
 		if (_slider.value == 0) {
 			image.sprite = img;
+			Game.setVitC1 (true);
+			Goal.isCheckedVit ();
 		}
 	}
 }

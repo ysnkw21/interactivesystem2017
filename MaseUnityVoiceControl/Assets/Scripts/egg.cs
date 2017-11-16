@@ -18,11 +18,6 @@ public class egg : MonoBehaviour {
 		image = obj.GetComponent<Image> ();
 	}
 
-	// Update is called once per frame
-	void Update () {
-
-	}
-
 	void OnCollisionEnter(Collision collision) {
 		//衝突判定
 		if (collision.gameObject.tag == "Player") {
@@ -31,6 +26,8 @@ public class egg : MonoBehaviour {
 		}
 		if (_slider.value == 0) {
 			image.sprite = img;
+			Game.setVitA (true);
+			Goal.isCheckedVit ();
 		}
 	}
 }
