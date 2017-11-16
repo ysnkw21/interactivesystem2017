@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class HpCircle : MonoBehaviour {
 
 	public float time;
+	private static float def_time;
 	public Image gaugeCtrl;
 	public Text text;
 
 	private float change;
 
 	void Start () {
+		def_time = time;
 		change = time / 0.75f;
 		text.gameObject.GetComponent<Text>().enabled = false;
 	}
@@ -31,6 +33,10 @@ public class HpCircle : MonoBehaviour {
 	private IEnumerator toResultScene(float waitTime){
 		yield return new WaitForSeconds (waitTime);
 		SceneManager.LoadScene ("result_scnece");
+	}
+
+	public static float getDefTime(){
+		return def_time;
 	}
 
 }

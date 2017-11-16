@@ -10,6 +10,6 @@ public class Round : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		rotationNow += (rotationAdd * Time.deltaTime);
-		transform.rotation = Quaternion.Euler (0, rotationNow, 0);
+		transform.rotation = Quaternion.Euler (rotationNow, rotationNow, rotationNow);
 	}
 }
