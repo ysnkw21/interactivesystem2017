@@ -6,6 +6,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace UnityChan
 {
@@ -52,6 +53,9 @@ namespace UnityChan
 		static int restState = Animator.StringToHash ("Base Layer.Rest");
 		static int loseState = Animator.StringToHash ("Base Layer.Lose");
 
+		//追加
+		Text _text;
+
 		// 初期化
 		void Start ()
 		{
@@ -65,10 +69,14 @@ namespace UnityChan
 			// CapsuleColliderコンポーネントのHeight、Centerの初期値を保存する
 			orgColHight = col.height;
 			orgVectColCenter = col.center;
+			forwardSpeed = 7.0f;
+			_text = GameObject.Find("GameClearText").GetComponent<Text>();
+			_text.gameObject.GetComponent<Text>().enabled = false;
 			if (Game.getLoseFlag()) {
-				forwardSpeed = 7.0f;
 				Game.setLoseFlag (false);
 			}
+			if (Game.getGoalFlag ())
+				Game.setGoalFlag (false);
 		}
 	
 	
@@ -76,11 +84,9 @@ namespace UnityChan
 		void FixedUpdate ()
 		{
 			if (Game.getGoalFlag ()) {
-				Game.setGoalFlag();
-				StartCoroutine (sleep(2.0f));
-				return;
+				_text.gameObject.GetComponent<Text> ().enabled = true;
+				StartCoroutine (sleep (4.0f));
 			}
-
 			if (Game.getLoseFlag ()) {
 				anim.SetBool ("Lose", true);
 				velocity = new Vector3(0, 0, 0);

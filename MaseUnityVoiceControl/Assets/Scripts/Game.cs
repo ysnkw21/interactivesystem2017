@@ -6,16 +6,16 @@ public class Game : MonoBehaviour {
 
 	private static bool goalFlag = false;
 	private static bool loseFlag = false;
+	private static bool vitC1 = false;
+	private static bool vitA = false;
+	private static bool vitB1 = false;
 	private static int car_count = 3;
 	private static int ora_count = 3;
 	private static int egg_count = 3;
-	
-	public static void setGoalFlag(){
-		if (!goalFlag)
-			goalFlag = true;
-		else
-			goalFlag = false;
 
+	//Set Value
+	public static void setGoalFlag(bool flag){
+		goalFlag = flag;
 		return;
 	}
 
@@ -24,6 +24,22 @@ public class Game : MonoBehaviour {
 		return;
 	}
 
+	public static void setVitC1(bool flag){
+		vitC1 = flag;
+		return;
+	}
+
+	public static void setVitA(bool flag){
+		vitA = flag;
+		return;
+	}
+
+	public static void setVitB1(bool flag){
+		vitB1 = flag;
+		return;
+	}
+
+	//Increase value
 	public static void incCarCount(){
 		car_count--;
 		return;
@@ -39,12 +55,25 @@ public class Game : MonoBehaviour {
 		return;
 	}
 
+	//Get Value
 	public static bool getGoalFlag(){
 		return goalFlag;
 	}
 
 	public static bool getLoseFlag(){
 		return loseFlag;
+	}
+
+	public static bool getVitC1(){
+		return vitC1;
+	}
+
+	public static bool getVitA(){
+		return vitA;
+	}
+
+	public static bool getVitB1(){
+		return vitB1;
 	}
 
 	public static int getCarCount(){

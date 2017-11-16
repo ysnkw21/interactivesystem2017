@@ -9,7 +9,16 @@ public class Goal : MonoBehaviour {
 		Debug.Log ("OnTriggerEnter");
 
 		if (hitCollider.tag == "Player")
-			Game.setGoalFlag();
+			Game.setGoalFlag(true);
+	}
+
+	public static void isCheckedVit(){
+		if (Game.getVitC1 () && Game.getVitA () && Game.getVitB1 ()) {
+			Game.setGoalFlag (true);
+			Game.setVitC1 (false);
+			Game.setVitA (false);
+			Game.setVitB1 (false);
+		}
 	}
 		
 }
