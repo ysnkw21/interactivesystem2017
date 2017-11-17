@@ -55,10 +55,13 @@ namespace UnityChan
 
 		//追加
 		Text _text;
+		public GameObject obj_unitychan;
 
 		// 初期化
 		void Start ()
 		{
+			//Debug.Log (GoalSet.itemVector[GoalSet.getItemRanPos (0)]);
+			//GameObject.Find("UnityChan").transform.position = GoalSet.itemVector[GoalSet.getItemRanPos (0)];
 			// Animatorコンポーネントを取得する
 			anim = GetComponent<Animator> ();
 			// CapsuleColliderコンポーネントを取得する（カプセル型コリジョン）

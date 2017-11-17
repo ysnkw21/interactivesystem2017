@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class carrot : MonoBehaviour {
+public class carrot_1 : MonoBehaviour {
 
 	Slider _slider;
 	public int index;
@@ -17,7 +17,7 @@ public class carrot : MonoBehaviour {
 		_slider = GameObject.Find("VitB1Bar").GetComponent<Slider>();
 		obj = GameObject.Find("VirusImgB1").gameObject as GameObject;
 		image = obj.GetComponent<Image> ();
-		transform.position = GoalSet.itemVector[GoalSet.getItemRanPos (index)];
+//		transform.position = GoalSet.itemVector[GoalSet.getItemRanPos (index)];
 	}
 
 	void OnCollisionEnter(Collision collision) {

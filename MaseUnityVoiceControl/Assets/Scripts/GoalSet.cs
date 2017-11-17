@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GoalSet : MonoBehaviour {
 
-	public GameObject obj;
-	public List<Vector3> itemVector = new List<Vector3>();
+	//public GameObject obj;
+	private static int[] itemPosIndex = new int[50];
+	public static List<Vector3> itemVector = new List<Vector3>();
 	private int randomPos;
 	private int row = 0;
 	private int colum = 0;
@@ -19,12 +20,19 @@ public class GoalSet : MonoBehaviour {
 				row++;
 				colum = 0;
 			}
-			itemVector [i] = new Vector3 (initx + colum * 5.0f, 1, initz - row * 5.0f);
+			itemVector.Add(new Vector3 (initx + colum * 5.0f, 1, initz - row * 5.0f));
 			colum++;
 		}
 
-		randomPos = Random.Range (0, 18 * 17);
-		Instantiate (obj, itemVector [randomPos], Quaternion.identity);
+		for(int n = 0; n < 20; n++ ){
+			randomPos = Random.Range (0, 18 * 17);
+			itemPosIndex [n] = randomPos;
+		}
+		//Instantiate (obj, itemVector [randomPos], Quaternion.identity);
+	}
+
+	public static int getItemRanPos(int num){
+		return itemPosIndex [num];
 	}
 
 	void FixedUpdate (){

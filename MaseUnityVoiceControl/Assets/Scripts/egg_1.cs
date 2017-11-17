@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class carrot : MonoBehaviour {
+public class egg_1 : MonoBehaviour {
 
 	Slider _slider;
 	public int index;
@@ -14,10 +14,10 @@ public class carrot : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// スライダーを取得する
-		_slider = GameObject.Find("VitB1Bar").GetComponent<Slider>();
-		obj = GameObject.Find("VirusImgB1").gameObject as GameObject;
+		_slider = GameObject.Find("VitABar").GetComponent<Slider>();
+		obj = GameObject.Find("VirusImgA").gameObject as GameObject;
 		image = obj.GetComponent<Image> ();
-		transform.position = GoalSet.itemVector[GoalSet.getItemRanPos (index)];
+	//	transform.position = GoalSet.itemVector[GoalSet.getItemRanPos (index)];
 	}
 
 	void OnCollisionEnter(Collision collision) {
@@ -28,7 +28,7 @@ public class carrot : MonoBehaviour {
 		}
 		if (_slider.value <= 0) {
 			image.sprite = img;
-			Game.setVitB1 (true);
+			Game.setVitA (true);
 			Goal.isCheckedVit ();
 		}
 	}
